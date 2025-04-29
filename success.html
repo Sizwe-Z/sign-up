@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subscription Confirmation</title>
+  <link rel="stylesheet" href="success.css">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="icon">
+        <span>✔</span>
+      </div>
+      <h1>Thanks for subscribing!</h1>
+  <p>A confirmation email has been sent to <strong id="userEmail"></strong>. Please open it and click the button inside to confirm your subscription.</p>
+      <button class="dismiss-btn">Dismiss message</button>
+    </div>
+  </div>
+  
+     <script>
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get('email');
+
+    if (email) {
+      document.getElementById('userEmail').textContent = email;
+    } else {
+      document.getElementById('userEmail').textContent = "your email address";
+    };
+  </script>
+
+</body>
+</html>
